@@ -1,0 +1,40 @@
+<div class="overlay-wrapper">
+    <div class="overlay-container">
+        <div class="header">Replacement Cost</div>
+      
+        <div class="body">
+      
+       	The amount entered is below the estimated replacement cost of <span class="estimatedValue"></span>. Occidental requires that the dwelling coverage is equal to or greater than the replacement cost. Do you want to use the estimated replacement cost or the value entered?
+
+        
+        </div>
+        
+        <div class="button-wrapper">
+            <a class="button gray close-overlay-wrapper">Leave Dwelling as <span class="userInputValue"></span></a>
+            <a class="button orange ChangeDwelling" style="float:right;">Change Dwelling to <span class="estimatedValue"></span></a>
+        </div>
+    
+    </div>
+</div>
+
+<script>
+
+$(function(){
+	
+	var originalValue = cleanVar(cleanCurrency($("[name='S5_Dwelling']").val()));
+	var newValue = cleanVar(cleanCurrency($(".quote-details .ReplacementCostBuilding .value").text()));
+	
+	$(".estimatedValue").html(newValue).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	$(".userInputValue").html(originalValue).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	
+	$(document).on("click", ".ChangeDwelling", function(){
+		
+		$("[name='S5_Dwelling']").val(newValue).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+		
+		UpdateBeforeLoad();
+		
+	});
+	
+});
+
+</script>

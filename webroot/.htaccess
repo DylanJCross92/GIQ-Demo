@@ -1,0 +1,13 @@
+SetEnv no-gzip dont-vary
+CheckSpelling On
+CheckCaseOnly On
+ErrorDocument 404 /404.html
+<FilesMatch "^(propertyquote|recallquote)\.html$">
+AddType application/x-httpd-php .htm .html
+</FilesMatch>
+<IfModule mod_headers.c>
+    Header set X-Robots-Tag "noindex"
+    <FilesMatch "\.(js|css|html|php)$">
+        Header set Cache-Control "no-cache"
+    </FilesMatch>
+</IfModule>

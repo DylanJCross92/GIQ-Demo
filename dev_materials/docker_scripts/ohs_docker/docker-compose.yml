@@ -1,0 +1,11 @@
+fnic:
+    build: ./
+    container_name: FNIC
+    volumes:
+      - "../../../webroot:/var/www"
+      - "../../../dev_materials/fe_react:/usr/src/react"
+      - "/usr/src/react/node_modules"
+    ports:
+      - "8080:80"
+    environment:
+      - HOSTIP=10.0.75.1

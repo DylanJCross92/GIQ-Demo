@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Thank you for completing a GEICO Insurance Agency Portolio homeowners quote online. Please give us a call if you have any questions or would like to purchase this quote.">
+<title>GEICO Insurance Agency Portfolio | Homeowners Insurance View Quote</title>
+<!--[if lte IE 8]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery-ui/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="js/address.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/json2.js" type="text/javascript"></script>
+<script src="js/iqs-service-proxy.js" type="text/javascript"></script>
+<script src="js/iqs-service.js" type="text/javascript"></script>
+<script src="js/jquery.cookie.js" type="text/javascript"></script>
+<script>
+var PropertyQuotePage = false;
+var formData = new Object();
+	formData["S5_FORM"] = {};
+</script>
+<script src="js/config.js"></script>
+<script src="js/quotetemplates.js"></script>
+<script src="js/frontendOptions/termNames.js"></script>
+<script src="js/frontendOptions/quoteConfig.js"></script>
+<script src="js/frontendOptions/quoteTermNameDisplayValues.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/frontendOptions/validationRules.js"></script>
+<script src="js/frontendOptions/errorMessages.js"></script>
+<script src="js/frontendOptions/dropdownMenus.js"></script>
+<script src="js/frontendOptions/propertyInfo.js"></script>
+<script src="js/global.js"></script>
+<script>
+$(function(){
+	
+	if(!getSessionCookie())
+	{
+		sessionTimedOut();
+	}
+	else
+	{
+		
+		function updateQuoteSessionStorageData(formData)
+		{
+			var SessionId = getSessionCookie();
+			var svc = new IqsService();
+		
+			var UpdateSessionStorageDataArray = formData;
+			
+			var compressedData = JSON.stringify(UpdateSessionStorageDataArray);
+			
+			svc.updateSessionStorageData(SessionId, compressedData, updateQuoteSessionStorageDataSuccess);
+		}
+		
+		function updateQuoteSessionStorageDataSuccess(result)
+		{
+			if(result.exception!= null)
+			{
+				exceptionHandler(result);
+			}
+			else
+			{
+				refreshSessionCookie();
+
+				updateSavedQuote("custom", true);
+			}
+		}
+				
+		
+		
+		function getQuoteData()
+		{
+			var SessionId = getSessionCookie();
+			var svc = new IqsService();
+		
+			svc.getSessionStorageData(SessionId, getQuoteDataSuccess);
+		}
+		
+		
+		function getQuoteDataSuccess(result)
+		{
+		   
+			var requestedStorageData = "";
+			
+			if(result.exception!= null)
+			{
+				//(-SDR-)we were getting an invalid session that was falling here and ending this call prematurely
+			}
+			else
+			{
+				requestedStorageData = result.responseDataPayload.SessionStorageData;
+			}
+			
+			
+			formData = requestedStorageData != "" ? JSON.parse(requestedStorageData) : formData;
+			
+			PopulateSidebar();
+			
+			
+			//check for DP3 
+			
+			
+			var checkPath = Insurance_Product == "DP3" ? "section/5/step-quote_DP3.html" : "section/5/step-quote.html";
+			
+			var filePath = "section/5/step-quote.html";
+			
+			$.ajax({
+				url: checkPath,
+				type:'HEAD',
+				error: function()
+				{
+					
+				},
+				success: function()
+				{
+					
+				},
+				complete: function(data){
+					
+					filePath = data.status == 200 ? checkPath : filePath;
+					//LOAD START 
+					
+					$(".content > .left").load(filePath, function(){			
+				
+					UpdateBeforeLoad();
+					
+					UpdateOnLoad();
+					
+					$(".payment-plans").hide();
+					
+					if(formData["S5_FORM"])
+					{
+						$("[name='quote-type']:last").trigger("click");
+						$(".coverage-options-wrapper li.basic, .coverage-options-wrapper li.preferred").find(":radio").prop("disabled", true);
+					}
+					else
+					{
+						$(".quote-details-wrapper").empty().load("section/5/quote-details/default-quotes.html", function(){
+							
+							generateSavedQuote("preferred");
+							
+							UpdateOnLoad();
+							
+							if(Insurance_Product == "DP3" && typeof quoteFields_DP3 !== "undefined")
+							{
+								quoteFields = quoteFields_DP3;	
+							}
+							
+							$(".quote-details [data-term-name]").each(function(i, v){
+								
+								var termName = $(this).data("term-name");
+								
+								if($.inArray(termName, quoteFields) < 0)
+								{
+									$(this).remove();	
+								}
+							});
+							
+						});
+					
+					}
+					
+					$(document).on("click", ".choose-options", function(){
+				
+						$('html, body').stop().animate({scrollTop: $('.quote-wrapper .property-coverage').offset().top});
+						
+						$(this).closest("li").find(':radio').trigger("click");
+						
+					});
+					
+					$(document).on("click", ".update-quote", function(e){
+						
+						if(replacementCostOK)
+						{
+							if(!validateFormData(getFormData()))
+							{
+								var newFormData = JSON.parse(getFormData());
+									formData["S5_FORM"] = newFormData["S5_FORM"];
+								
+								updateQuoteSessionStorageData(formData);
+								
+								$("html, body").stop().animate({ scrollTop: "0px" });
+								$(this).hide();
+								
+								Loading("Please wait while we</br>calculate your quote");	
+								
+							}
+						
+						}
+						
+					});
+					
+					
+					$(document).on("keyup change blur", ".quote-wrapper input, select", function(){
+						
+						$(".update-quote").show();
+						
+					});
+				});	
+					
+					//LOAD END 
+					
+				}
+			});
+			
+			
+			
+			
+			$(".content > .right").load("section/sidebar/section-5.html", function(){
+							
+				PopulateSidebar(true);
+			});
+		
+		}
+		
+		
+		function getInsuranceProduct()
+		{
+			var SelectedQuoteDataArray = new Array();
+			
+			SelectedQuoteDataArray.push("Insurance_Product");
+			
+			var SessionId = getSessionCookie();
+			var svc = new IqsService();
+		
+			svc.getSelectedQuoteData(SessionId, SelectedQuoteDataArray,getInsuranceProductSuccess);
+		}
+		
+		function getInsuranceProductSuccess(result)
+		{
+			var responseData = "";
+			
+			if(result.exception!= null)
+			{
+				exceptionHandler(result);
+			}
+			else
+			{
+			   responseData = result.responseDataPayload.SelectedQuoteData;
+				
+				if(responseData.Insurance_Product)
+				{
+					Insurance_Product = responseData.Insurance_Product;		
+					
+					getQuoteData();
+				}
+				else
+				{
+					serverError();
+				}
+			}
+		}
+		
+		getInsuranceProduct();
+		
+	}
+	
+
+});
+</script>
+<script src="js/sitewide.js"></script>
+<script src="js/quote.js"></script>
+<script src="js/override.js"></script>
+</head>
+<body>
+	<div class="blue-bar">
+    	<div class="center">
+        	<div class="right">Customer Service: <strong>@phonenumber@</strong></div>
+        </div>
+    </div>
+    
+    <div class="container center">
+        <header class="header">
+			<div class="left"><img src="assets/geico-logo.png"/></div>
+			<div class="right"><span class="label" style="padding-right: 10px;">Underwritten by: </span> <img src="assets/fedNatLogo.png"/></div>
+        </header>
+        
+        <ul class="navigation">
+        	<a href="propertyquote.html#/section=1&step=1.1" class="section-1 current"></a>
+            <a href="propertyquote.html#/section=2&step=2.1" class="section-2 current"></a>
+            <a href="propertyquote.html#/section=3&step=3.1" class="section-3 current"></a>
+            <a href="propertyquote.html#/section=4&step=4.1" class="section-4 current"></a>
+            <a class="section-5 current"></a>
+        </ul>
+        
+		<div class="content">
+        	<div class="left"></div>
+            <div class="right"></div>
+        </div>
+	
+        <div class="footer">
+			<div class="left">
+				© 2016 Federated National Insurance Company   |  <a href="http://www.fednat.com/about-us/" target="_blank">About Us</a>  |  <a href="http://www.fednat.com/home/privacy-policy/" target="_blank">Privacy Policy</a>
+			</div>
+            
+            <div class="right">
+                <a href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=quotes.occidentalhomeowners.com&lang=en" target="_blank"><img src="assets/verisign-logo.png"/></a>
+            </div>
+        </div>
+    
+    </div>
+
+    <script src="../../js/analytics.js"></script>
+    <script src="../../js/mixpanel.js"></script>
+
+<script>
+$(function(){
+	PixelTracking("viewquote");
+});
+</script>
+<style>
+    .overlay-wrapper .overlay-container {
+        transform: none !important;
+        -ms-transform: none !important;
+    }
+</style>
+</body>
+<style>
+    .overlay-wrapper .overlay-container {
+        transform: none !important;
+        -ms-transform: none !important;
+    }
+</style>
+</html>

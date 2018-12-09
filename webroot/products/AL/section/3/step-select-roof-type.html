@@ -1,0 +1,21 @@
+<div class="overlay-wrapper" style="display:block;">
+    <div class="overlay-container wide">
+    
+    <h2>If your roof includes more than one type of material, select the type that is most common.</h2>
+    <div class="sub-header">Place cursor on image to see descriptions for each roof material.</div>
+    
+    <script>
+    $(function(){
+		loadHomeInfo(PropertyInfo.RoofType);
+	});
+    </script>
+    
+    <ul class="selection-list roof-type"></ul>
+    
+    <div class="button-wrapper">
+            <a class="button gray close-overlay-wrapper">Cancel</a>
+            <a class="button orange accept-selection" data-for="S3_RoofType"  data-selection-type="RoofType">OK</a>
+        </div>
+    
+    </div>
+</div>    

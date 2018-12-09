@@ -1,0 +1,240 @@
+<style>
+table {
+	table-layout:fixed;	
+}
+
+.debug-wrapper {
+	background-color: #F2ECE0;
+	min-width: 250px;
+	position: fixed;
+	right: 25px;
+	bottom: 0px;
+	z-index: 9999;
+	word-wrap: break-word;
+	border: 1px solid #BAB4AB;
+}
+.debug-wrapper .debug-header {
+	font-size: 14px;
+	line-height: 14px;
+	color: #FFF;
+	background-color: #BAB4AB;
+	cursor: pointer;
+	padding-top: 10px;
+	padding-right: 15px;
+	padding-bottom: 10px;
+	padding-left: 15px;
+}
+.debug-wrapper .debug-header .debug-hide {
+	font-size: 12px;
+	float:right;	
+}
+.debug-wrapper .debug-content {
+	padding: 15px;
+	height: 300px;
+	width: 700px;
+	font-size: 15px;
+	line-height: 15px;
+	color: #333;
+	overflow-y: auto;
+	box-sizing: border-box;
+}
+.debug-wrapper .debug-content .debug-table {
+	margin-top: 25px;
+}
+.debug-wrapper .debug-content > .debug-table td {
+	padding-bottom: 10px;	
+}
+.debug-wrapper .debug-content table.child-table {
+	margin: -5px;	
+}
+.debug-wrapper .debug-content table.child-table td {
+	padding-bottom: 0px !important;	
+}
+
+.debug-wrapper .debug-content table.child-table .class td div {
+	line-height: 20px;
+	height: 20px;
+	overflow: hidden;
+}
+.debug-wrapper .debug-content .label {
+	font-size: 15px;
+	line-height: 15px;
+	color: #666666;
+}
+
+.debug-wrapper .debug-content .DP3Enabled {
+	color: blue;
+}
+
+.debug-wrapper .expand-debug-wrapper {
+	float:right;
+}
+
+.debug-wrapper .minimize-debug-wrapper {
+	display:none;
+	float:right;	
+}
+
+.debug-wrapper .call-history {
+	margin-top: 15px;	
+	display:none;
+}
+.debug-wrapper .call-history .call-history-header {
+	background-color: #BAB4AB;
+	color: #FFF;
+	padding: 10px;
+}
+.debug-wrapper .call-history tr td{
+	padding: 10px;
+}
+.debug-wrapper .call-history tr:nth-child(odd):not(:first-child) {
+	background-color: rgba(255,255,255,0.5);
+}
+
+</style>
+
+<script>
+$(function(){
+	
+	$(document).on("click", ".debug-wrapper .debug-header", function(){
+		
+		$(".debug-content").toggle();
+		$(".debug-content").css({"width":"500px", "height":"300px"});
+		$(".debug-wrapper").css({"height": "auto", "width":"auto", "top": "", "left": "", "bottom": "0", "right":"50px"});
+		
+		$(".minimize-debug-wrapper").hide();
+		$(".expand-debug-wrapper").show();
+		
+	});
+	
+	var TermNameKeys = {};
+	$.each(TermNames, function(key, name){ TermNameKeys[name] = key; });
+	
+	$(document).on('mouseover', 'body', function(e) {
+		
+		var classN = $(e.target).attr("class") ? $(e.target).attr("class") : "--";
+		var ID = $(e.target).attr("id") ? $(e.target).attr("id") : "--";
+		var name = $(e.target).attr("name") ? $(e.target).attr("name") : "--";
+		var value = $(e.target).val() ? $(e.target).val() : "--";
+ 		
+		var name = $(e.target).closest("[name]").attr("name") ? $(e.target).closest("[name]").attr("name") : "--";
+		
+		var termName = TermNameKeys[name] ? TermNameKeys[name] : "--";
+		
+		var tableHTML = '<table class="child-table" width="100%" border="0" cellspacing="5" cellpadding="0"><tr class="class"><td class="label" width="30%">Class:</td><td><div>'+classN+'</div></td></tr><tr><td class="label">ID:</td><td>'+ID+'</td></tr><tr><td class="label">Name:</td><td>'+name+'</td></tr><tr><td class="label">Term Name:</td><td>'+termName+'</td></tr><tr><td class="label">Value</td><td>'+value+'</td></tr></table>';
+		
+		$(".debug-wrapper .debug-content .element").html(tableHTML);
+	});
+	
+	$(document).on("click", ".data", function(){
+		
+		if(!window.getSelection().toString())
+		{
+			$(this).selectText();
+		}
+	});
+	
+	$(document).on("click", ".expand-debug-wrapper", function(){
+		
+		$(".debug-wrapper").css({"top": "25%", "left": "25%", "bottom": "25%", "right":"25%"});
+		
+		var newHeight = $(".debug-wrapper").height() - $(".debug-wrapper .debug-header").outerHeight(true);
+		$(".debug-content").css({"width":"100%", "height": newHeight-50});
+			
+		$(this).hide();
+		$(".minimize-debug-wrapper").show();
+		
+		
+	});
+	
+	$(document).on("click", ".minimize-debug-wrapper", function(){
+		
+		$(".debug-content").css({"width":"500px", "height":"300px"});
+		$(".debug-wrapper").css({"top": "", "left": "", "bottom": "0", "right":"50px"});
+		$(this).hide();
+		$(".expand-debug-wrapper").show();
+	});
+	
+	
+	$(".debug-wrapper .debug-content .SessionID").html(getSessionCookie());
+	$(".debug-wrapper .debug-content .FEID").html(Feid);
+	if(Insurance_Product_Toggle)
+	{
+		$(".debug-wrapper .debug-content .DP3Enabled").html(Insurance_Product_Toggle);
+	}
+	else
+	{
+		$(".debug-wrapper .debug-content .DP3Enabled").html("<div style='color: green;'>waiting...</div>");
+	}
+
+	$(".debug-wrapper .debug-content .InsuranceProduct").html("<div style='color: green;'>waiting...</div>");
+
+	setInterval(function(){
+		$(".debug-wrapper .debug-content .DP3Enabled").html(Insurance_Product_Toggle);
+		$(".debug-wrapper .debug-content .InsuranceProduct").html(Insurance_Product);
+	}, 2500);
+
+	
+});
+</script>
+
+<div class="debug-wrapper">
+  <div class="debug-header"><div class="debug-hide">Show / Hide</div>Debug Information</div>
+  <div class="debug-content">
+  	
+	<a href="javascript: void(0);" class="expand-debug-wrapper">Expand Window</a>
+    <a href="javascript: void(0);" class="minimize-debug-wrapper">Minimize Window</a>
+  
+    <table class="debug-table" width="100%" border="0" cellspacing="0" cellpadding="5">
+        <tr>
+            <td width="30%"><div class="QuoteSessionWrapper"><span class="label">Session ID:</span></div></td>
+            <td><span class="SessionID data"></span></td>
+        </tr>
+        <tr>
+            <td><div class="QuoteIDWrapper"><span class="label">QuoteID:</span></div></td>
+            <td><span class="QuoteID data"></span></td>
+        </tr>
+        <tr>
+            <td><div class="FEVersionWrapper"><span class="label">FE Version:</span></div></td>
+            <td><span class="FEVersion data">FNIC_1.8.14-1_dev_20170810_200002</span></td>
+        </tr>
+        <tr>
+            <td><div class="PixelTrackingURLWrapper"><span class="label">Pixel Tracking URL:</span></div></td>
+            <td><span class="PixelTrackingURL data">Not Active</span></td>
+        </tr>
+		<tr>
+			<td><div class="FEIDWrapper"><span class="label">FEID:</span></div></td>
+			<td><span class="FEID data">--</span></td>
+		</tr>
+		<tr>
+			<td><div class="DP3EnabledWrapper"><span class="label">DP3 Enabled:</span></div></td>
+			<td><span class="DP3Enabled data">--</span></td>
+		</tr>
+		<tr>
+			<td><div class="InsuranceProductWrapper"><span class="label">Insurance Product:</span></div></td>
+			<td><span class="InsuranceProduct data">--</span></td>
+		</tr>
+        <tr>
+            <td><div class="TargetWrapper"><span class="label bold">Target Information:</span></div></td>
+            <td><span class="element data"></span></td>
+        </tr>
+        <tr>
+            <td><div class="CallNameWrapper"><span class="label">Current Call Name:</span></div></td>
+            <td><span class="CallName data">--</span></td>
+        </tr>
+        <tr>
+            <td><div class="CallDataWrapper"><span class="label">Current Call Data:</span></div></td>
+            <td><span class="CallData data">--</span></td>
+        </tr>
+    </table>
+    
+    <table class="call-history" width="100%" border="0" cellspacing="0" cellpadding="5">
+    	<tr class="call-history-header">
+        	<td width="30%">Call Name</td>
+            <td>Call Data</td>
+        </tr>
+   </table>
+    
+      
+  </div>
+</div>

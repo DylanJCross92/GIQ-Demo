@@ -1,0 +1,23 @@
+version: '2'
+services:
+  fnic-iqs-fe:
+    image: registry.icg360.net/fnic-iqs-fe:${VERSION}
+    container_name: fnic-iqs-fe
+    expose:
+      - 8901
+    ports:
+      - 8901:8901
+    environment:
+      - SECRET
+      - ENVIRONMENT
+    env_file:
+      - ./vars/${ENVIRONMENT}.env
+    labels:
+      io.rancher.container.pull_image: always
+      io.rancher.scheduler.affinity:host_label: role=docker
+      io.rancher.scheduler.affinity:container_ne: fnic-iqs-fe
+    logging:
+      driver: awslogs
+      options:
+        awslogs-region: "us-east-1"
+        awslogs-group: "fnic-iqs-fe"

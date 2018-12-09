@@ -1,0 +1,154 @@
+  	<a class="update-quote button orange"><img src="assets/update-icon.png" /> Update Quote</a>
+    
+    <form name="S5_FORM" onSubmit="return false;">
+    
+    <div class="header property-coverage">Property Coverage</div>
+    
+    <ul class="indent quote-details">
+    	<li class="two-col CoverageA" data-term-name="CoverageA">
+            <div class="left">Dwelling <span class="ReplacementCostBuilding" data-term-name="ReplacementCostRounded">(Est. Replacement Cost: <span class="value bold"></span>)</span> <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">Dwelling - Your Main dwelling including Additions </p> Dwelling coverage must be greater than or equal to the estimated replacement cost of the dwelling. You may choose to keep your Dwelling coverage slightly below the estimated replacement cost. However, upon inspection, your coverage will be increased if the actual replacement cost is higher.</div></a></div>
+            <div class="right"><input name="S5_Dwelling" data-ezquote-term-name="CoverageA" type="text" class="formatCurrency"/></div>
+        </li>
+        <li class="two-col CoverageB" data-term-name="CoverageB">
+            <div class="left">Other Structures <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">Other Structures - Structures on your premises separated by space from the Main Dwelling (e.g.: detached garage, shed, fences)</div></a></div>
+            <div class="right"><span class="fixed-value"></span>
+            	<input name="S5_OtherStructures" data-ezquote-term-name="OptionCoverageB" type="hidden"/> 
+            </div>
+        </li>
+        <li class="two-col CoverageC" data-term-name="CoverageC">
+            <div class="left">Personal Possessions <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">Personal Posessions – Contents of your home including furniture, appliances and clothing</div></a></div>
+            <div class="right"><select name="S5_PersonalProperty" data-ezquote-term-name="OptionCoverageC" data-dropdown-menus="PersonalPossessions"></select></div>
+        </li>
+        <li class="two-col CoverageD" data-term-name="CoverageD">
+            <div class="left">Loss of Use <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">Loss of Use - Living expenses incurred by you so that your household can maintain its normal standard of living should you not be able to reside in your home due to a covered loss. If a covered loss make that part of this property unfit for normal use, Fair Rental Value Coverage provides for loss of rents less any expenses that do not continue.</div></a></div>
+            <div class="right"><span class="fixed-value"></span>
+            	<input name="S5_LossOfUse" data-ezquote-term-name="OptionCoverageD" type="hidden"/> 
+            </div>
+        </li>
+        <li class="two-col AdditionalAmountsOfInsurance" data-term-name="AdditionalAmountsOfInsurance">
+            <div class="left">Additional Limits of Insurance (on Dwelling)</div>
+            <div class="right"><select name="S5_AdditionalInsuranceLimits" data-ezquote-term-name="AdditionalAmountsOfInsurance" data-dropdown-menus="QuoteAdditionalLimits"></select></div>
+        </li>
+         <li class="two-col PersonalPropertyReplacementCost" data-term-name="PersonalPropertyReplacementCost">
+            <div class="left">Personal Property Loss Settlement</div>
+            <div class="right"><select name="S5_PersonalPropertyReplacementCost" data-ezquote-term-name="PersonalPropertyReplacementCost" data-dropdown-menus="QuoteSettlementType"></select></div>
+        </li>
+    </ul>
+    
+    <div class="header">Liability Coverage</div>
+    
+	<ul class="indent quote-details">
+    	<li class="two-col CoverageE" data-term-name="CoverageE">
+            <div class="left">Personal Liability <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">Personal Liability-Coverage for bodily injury and property damage sustained by others for which you or your family members are legally responsible. </div></a></div>
+            <div class="right"><select name="S5_PersonalLiability" data-ezquote-term-name="CoverageE" data-dropdown-menus="QuotePersonalLiability"></select></div>
+        </li>
+        <li class="two-col CoverageL" data-term-name="CoverageL">
+            <div class="left">Personal Liability <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">Personal Liability-Coverage for bodily injury and property damage sustained by others for which you or your family members are legally responsible. </div></a></div>
+            <div class="right"><select name="S5_PersonalLiability" data-ezquote-term-name="CoverageL" data-dropdown-menus="QuotePersonalLiability"></select></div>
+        </li>
+        <li class="two-col CoverageF" data-term-name="CoverageF">
+            <div class="left">Medical Payments to Others <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">Medical Payments to Others - Payment of necessary medical expenses for guests who are accidentally injured on your property. This is regardless whether or not you are legally responsible. </div></a></div>
+            <div class="right"><select name="S5_MedicalPayments" data-ezquote-term-name="CoverageF" data-dropdown-menus="QuoteMedicalPayments"></select></div>
+        </li>
+        <li class="two-col CoverageM" data-term-name="CoverageM">
+            <div class="left">Medical Payments to Others <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">Medical Payments to Others - Payment of necessary medical expenses for guests who are accidentally injured on your property. This is regardless whether or not you are legally responsible. </div></a></div>
+            <div class="right"><select name="S5_MedicalPayments" data-ezquote-term-name="CoverageM" data-dropdown-menus="QuoteMedicalPayments"></select></div>
+        </li>
+        
+        <li class="two-col PersonalInjuryCoverage" data-term-name="PersonalInjuryCoverage">
+            <div class="left">Personal Injury</div>
+            <div class="right">
+                <div class="sub-col-wrapper">
+                    <div class="col-50-percent">
+                        <input type="radio" name="S5_PersonalInjuryCoverage" data-ezquote-term-name="PersonalInjuryCoverage" value="100" id="PersonalInjuryCoverage-yes"><label for="PersonalInjuryCoverage-yes" class="inline-block">Yes</label>
+                    </div>
+                    <div class="col-50-percent">
+                        <input type="radio" name="S5_PersonalInjuryCoverage" data-ezquote-term-name="PersonalInjuryCoverage" value="200" id="PersonalInjuryCoverage-no"><label for="PersonalInjuryCoverage-no" class="inline-block">No</label>
+                    </div>
+                </div>      
+            </div>
+        </li>
+    </ul>
+    
+    <div class="header">Additional Coverage</div>
+    
+	<ul class="indent quote-details">
+        <li class="two-col IdentityFraudCoverage" data-term-name="IdentityFraudCoverage">
+            <div class="left">Identity Theft Expense Protection</div>
+            <div class="right">
+            	<select name="S5_IdentityFraudCoverage" data-ezquote-term-name="IdentityFraudCoverage" data-dropdown-menus="QuoteIdentityFraudCoverage"></select>
+            </div>
+        </li>
+        <li class="two-col MechanicalBreakdownCoverage" data-term-name="MechanicalBreakdownCoverage">
+            <div class="left">Mechanical Breakdown</div>
+            <div class="right">
+            	<div class="sub-col-wrapper">
+                    <div class="col-50-percent">
+                        <input type="radio" name="S5_MechanicalBreakdownCoverage" data-ezquote-term-name="MechanicalBreakdownCoverage" value="100" id="MechanicalBreakdownCoverage-yes"><label for="MechanicalBreakdownCoverage-yes" class="inline-block">Yes</label>
+                    </div>
+                    <div class="col-50-percent">
+                        <input type="radio" name="S5_MechanicalBreakdownCoverage" data-ezquote-term-name="MechanicalBreakdownCoverage" value="200" id="MechanicalBreakdownCoverage-no"><label for="MechanicalBreakdownCoverage-no" class="inline-block">No</label>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="two-col TheftCoverage" data-term-name="TheftCoverage">
+            <div class="left">Theft Protection</div>
+            <div class="right">
+            	<span class="fixed-value"></span>
+            	<input name="S5_TheftCoverage" data-ezquote-term-name="TheftCoverage" type="hidden"/>
+                
+                <select name="S5_TheftCoverage" data-ezquote-term-name="TheftCoverage" data-dropdown-menus="QuoteTheftCoverage"></select>
+            </div>
+        </li>
+        <li class="two-col EarthquakeCoverage" data-term-name="EarthquakeCoverage">
+            <div class="left">Earthquake Protection</div>
+            <div class="right">
+            	<div class="sub-col-wrapper">
+                    <div class="col-50-percent">
+                        <input type="radio" name="S5_EarthquakeCoverage" value="100" data-ezquote-term-name="EarthquakeCoverage" id="EarthquakeCoverage-yes"><label for="EarthquakeCoverage-yes" class="inline-block">Yes</label>
+                    </div>
+                    <div class="col-50-percent">
+                        <input type="radio" name="S5_EarthquakeCoverage" value="200" data-ezquote-term-name="EarthquakeCoverage" id="EarthquakeCoverage-no"><label for="EarthquakeCoverage-no" class="inline-block">No</label>
+                    </div>
+                </div>
+            </div>
+        </li>
+        <li class="two-col JewelrySpecialLimits" data-term-name="JewelrySpecialLimits">
+            <div class="left">Jewelry Coverage</div>
+            <div class="right"><select name="S5_JewelryCoverage" data-ezquote-term-name="JewelrySpecialLimits" data-dropdown-menus="QuoteJewlryCoverage"></select></div>
+        </li>
+        <li class="two-col WaterBackupCoverage" data-term-name="WaterBackupCoverage">
+            <div class="left">Water Backup  and  Sump  Pump Overflow  Coverage <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">The GEICO Insurance Agency recommends that you purchase this coverage.</div></a></div>
+            <div class="right"><select name="S5_OverflowCoverage" data-ezquote-term-name="WaterBackupCoverage" data-dropdown-menus="QuoteOverflowCoverage"></select></div>
+        </li>
+        <li class="two-col LossAssessmentCoverage" data-term-name="LossAssessmentCoverage">
+            <div class="left">Loss Assessment</div>
+            <div class="right"><select name="S5_LossAssessment" data-ezquote-term-name="LossAssessmentCoverage" data-dropdown-menus="QuoteLossAssessment"></select></div>
+        </li>
+        <li class="two-col IncreasedOrdinanceLimit" data-term-name="IncreasedOrdinanceLimit">
+            <div class="left">Law/Ordinance Coverage</div>
+            <div class="right"><select name="S5_OrdinanceCoverage" data-ezquote-term-name="IncreasedOrdinanceLimit" data-dropdown-menus="QuoteLawOrdinanceCoverage"></select></div>
+        </li>
+    </ul>
+    
+    <div class="header">Deductibles</div>
+    
+    <ul class="indent quote-details">
+        <li class="two-col AllOtherPerilsDeductible" data-term-name="AllOtherPerilsDeductible">
+            <div class="left">Regular Loss</div>
+            <div class="right"><select name="S5_RegularLoss" data-ezquote-term-name="AllOtherPerilsDeductible" data-dropdown-menus="QuoteRegularLoss"></select></div>
+        </li>
+        <li class="two-col HurricaneDeductible" data-term-name="HurricaneDeductible">
+            <div class="left">Hurricane Deductible <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">A Hurricane Deductible applies to any loss caused by a Hurricane. Hurricane means a tropical storm event declared by the National Hurricane Center to be a Hurricane.</div></a></div>
+            <div class="right"><select name="S5_HurricaneDeductible" data-ezquote-term-name="HurricaneDeductible" data-dropdown-menus="HurricaneDeductible"></select></div>
+        </li>
+        <li class="two-col WindHailDeductible" data-term-name="WindHailDeductible">
+            <div class="left">Wind/Hail Deductible <a href="#" onClick="javascript:return false;" class="tooltip-parent"><img src="assets/help-icon.png"/><div class="tooltip">A Wind/Hail Deductible applies to any loss caused by any type of wind or hail.</div></a></div>
+            <div class="right"><select name="S5_WindHailDeductible" data-ezquote-term-name="WindHailDeductible" data-dropdown-menus="WindHailDeductible"></select></div>
+        </li>
+    </ul>
+
+    
+    </form>
+   

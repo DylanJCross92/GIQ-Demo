@@ -1,0 +1,289 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<project name="FNIC" default="build_all" basedir="../../">
+
+
+    <!--  define some properties (variables)  -->
+    <tstamp>
+        <format pattern="%Y%m%d_%H%M%S" property="build.time"/>
+    </tstamp>
+
+    <property name="phonenumber" value="(800) 566-1518" />
+    <property name="agencypartner" value="Federated National Insurance Company" />
+
+    <!--edit these for each rev -->
+    <property name="verprefix" value="FNIC" />
+    <property name="vernum" value="1.8.14-1" />
+    <property name="vertype" value="dev"/>
+    <property name="ver" value="${verprefix}_${vernum}_${vertype}_${build.time}" />
+    <property name="states" value="AL, LA" />
+    <property name="proj" value="${project.basedir}" />
+    <property name="productdir" value="${proj}/webroot/products" />
+
+    <!-- Git Error Feedback Folder -->
+    <property name="giterrfolder" value="${proj}/dev_materials/giterr" />
+
+    <!-- Git Clone Config for fe core and IQS projects -->
+    <property name="gitpath" value="git" />
+
+    <property name="fecoregitfolder" value="${proj}/dev_materials/fe_core_git" />
+    <property name="fecorerepourl" value="https://github.com/icg360/iqs-fe-core" />
+    <property name="fecorebranch" value="feature/react-core" />
+
+
+    <property name="iqsgitfolder" value="${proj}/dev_materials/iqs_git" />
+    <property name="iqsrepourl" value="https://github.com/icg360/iqs" />
+    <property name="iqsbranch" value="develop" />
+    <property name="stormpathurl" value="define(&quot;STORMPATH_APPLICATION&quot;, &quot;https://api.stormpath.com/v1/applications/3tYKm4UTVNYOaKUctCN9mp&quot;);" />
+
+
+    <!-- IQS Project location -->
+    <property name="iqslivefolder" value="${proj}/webroot/Iqs" />
+    <property name="iqsadminlivefolder" value="${proj}/webroot/iqs-admin" />
+
+    <!-- iqsConf.ini configuration -->
+    <property name="dbname" value="IQS_FNIC" />
+
+
+    <!-- ============================================  -->
+    <!-- Target: clone core fe files from GitHub       -->
+    <!-- ============================================  -->
+
+    <target name="clone_fe_core">
+        <mkdir dir="${giterrfolder}" />
+        <!-- Clone repository -->
+        <delete includeemptydirs="true" verbose="true" failonerror="false">
+            <fileset dir="${fecoregitfolder}" defaultexcludes="false" casesensitive="false">
+                 <include name="**/*" />
+             </fileset>
+        </delete>
+        <mkdir dir="${fecoregitfolder}" />
+        <exec command="git clone -b ${fecorebranch} --single-branch --depth 1  ${fecorerepourl} ${fecoregitfolder}"
+              dir="${fecoregitfolder}"
+              error="${giterrfolder}/core_err.txt"
+        />
+        <chmod mode="0777" failonerror="false">
+            <fileset dir="${fecoregitfolder}" defaultexcludes="false">
+                <include name="**/.git/**" />
+            </fileset>
+        </chmod>
+        <delete file="${fecoregitfolder}/README.md" />
+        <delete file="${fecoregitfolder}/.gitignore" />
+        <delete dir="${fecoregitfolder}/.git" includeemptydirs="true" verbose="true" failonerror="true" />
+
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: clone IQS project from GitHub       -->
+    <!-- ============================================  -->
+
+    <target name="clone_iqs">
+
+        <!-- Clone repository -->
+        <delete includeemptydirs="true" verbose="true" failonerror="false">
+            <fileset dir="${iqsgitfolder}" defaultexcludes="false" casesensitive="false">
+                <include name="**/*" />
+            </fileset>
+        </delete>
+        <mkdir dir="${iqsgitfolder}" />
+        <exec command="git clone -b ${iqsbranch} --single-branch --depth 1  ${iqsrepourl} ${iqsgitfolder}"
+              dir="${iqsgitfolder}"
+              error="${giterrfolder}/iqs_err.txt"
+        />
+        <chmod mode="0777" failonerror="false">
+            <fileset dir="${iqsgitfolder}" defaultexcludes="false">
+                <include name="**/.git/**" />
+            </fileset>
+        </chmod>
+        <delete file="${iqsgitfolder}/README.md" />
+        <delete file="${iqsgitfolder}/.gitignore" />
+        <delete dir="${iqsgitfolder}/.git" includeemptydirs="true" verbose="true" failonerror="true" />
+
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: copy IQS files to webroot folder          -->
+    <!-- ============================================  -->
+    <target name="copy_iqs">
+
+        <delete dir="${iqslivefolder}" includeemptydirs="true" verbose="true" failonerror="false" />
+        <mkdir dir="${iqslivefolder}" />
+
+        <copy todir="${iqslivefolder}" overwrite="true">
+            <fileset dir="${iqsgitfolder}/Iqs">
+                <exclude name="**/.git/**"/>
+            </fileset>
+        </copy>
+        <copy todir="${iqsadminlivefolder}" overwrite="true">
+            <fileset dir="${iqsgitfolder}/iqs-admin">
+                <exclude name="**/.git/**"/>
+            </fileset>
+        </copy>
+
+        <copy file="${iqsgitfolder}/iqsConf.ini" tofile="${proj}/webroot/iqsConf.ini" overwrite="true" />
+        <reflexive file="${proj}/webroot/iqsConf.ini">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern=".*dbname.*" replace="dbname = &quot;${dbname}&quot;" />
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+        <!-- update stormpath key for SageSure products (GEICO & FNIC) -->
+        <reflexive file="${proj}/webroot/iqs-admin/app/init.php">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern=".*&quot;STORMPATH_APPLICATION&quot;.*" replace="${stormpathurl}" />
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+    </target>
+
+    <!-- copy webroot dif files -->
+    <target name="build_webroot">
+        <copy todir="${proj}/webroot" overwrite="true">
+            <fileset dir="${proj}/dev_materials/fe_dif/webroot" />
+            <filterchain>
+                <replacetokens>
+                    <token key="phonenumber" value="${phonenumber}" />
+                    <token key="agencypartner" value="${agencypartner}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+        <!-- Update phone number and partner agent in webroot -->
+        <reflexive>
+            <fileset dir="${proj}/webroot">
+            </fileset>
+            <filterchain>
+                <replacetokens>
+                    <token key="phonenumber" value="${phonenumber}" />
+                    <token key="agencypartner" value="${agencypartner}" />
+                </replacetokens>
+            </filterchain>
+        </reflexive>
+    </target>
+
+    <!-- ============================================  -->
+    <!-- Target: build_states                          -->
+    <!-- ============================================  -->
+    <target name="build_states">
+        <echo msg="Building ${curstate}..." />
+
+        <echo msg="Deleting Old Directory" />
+        <delete dir="${fefinalfolder}" includeemptydirs="true" verbose="true" failonerror="false" />
+        <delete dir="${fereactfinalfolder}" includeemptydirs="true" verbose="true" failonerror="false" />
+
+
+
+        <echo msg="Creating Directory" />
+        <mkdir dir="${fefinalfolder}" />
+        <mkdir dir="${fereactfinalfolder}" />
+
+
+
+        <echo msg="Copying core files..." />
+        <copy todir="${fefinalfolder}" overwrite="true">
+            <fileset dir="${fecorefolder}">
+                <exclude name="**/_notes/**"/>
+            </fileset>
+            <filterchain>
+                <replacetokens>
+                    <token key="iqsapipath" value="${iqsapipath}" />
+                    <token key="gmapsapikey" value="${gmapsapikey}" />
+                    <token key="curstate" value="${curstate}" />
+                    <token key="phonenumber" value="${phonenumber}" />
+                    <token key="agencypartner" value="${agencypartner}" />
+                    <token key="ver" value="${ver}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+        <copy todir="${fereactfinalfolder}" overwrite="true">
+            <fileset dir="${fereactcorefolder}">
+                <exclude name="**/_notes/**"/>
+            </fileset>
+            <filterchain>
+                <replacetokens>
+                    <token key="iqsapipath" value="${iqsapipath}" />
+                    <token key="gmapsapikey" value="${gmapsapikey}" />
+                    <token key="curstate" value="${curstate}" />
+                    <token key="phonenumber" value="${phonenumber}" />
+                    <token key="agencypartner" value="${agencypartner}" />
+                    <token key="ver" value="${ver}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+        <echo msg="Copying dif files..." />
+        <copy todir="${fefinalfolder}" overwrite="true">
+            <fileset dir="${fediffolder}" />
+            <filterchain>
+                <replacetokens>
+                    <token key="iqsapipath" value="${iqsapipath}" />
+                    <token key="gmapsapikey" value="${gmapsapikey}" />
+                    <token key="curstate" value="${curstate}" />
+                    <token key="phonenumber" value="${phonenumber}" />
+                    <token key="agencypartner" value="${agencypartner}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+        <copy todir="${fereactfinalfolder}" overwrite="true">
+            <fileset dir="${fereactdiffolder}" />
+            <filterchain>
+                <replacetokens>
+                    <token key="iqsapipath" value="${iqsapipath}" />
+                    <token key="gmapsapikey" value="${gmapsapikey}" />
+                    <token key="curstate" value="${curstate}" />
+                    <token key="phonenumber" value="${phonenumber}" />
+                    <token key="agencypartner" value="${agencypartner}" />
+                </replacetokens>
+            </filterchain>
+        </copy>
+
+
+    </target>
+
+    <!-- Update the version information right in the root level propertyquote.html -->
+    <target name="update_version">
+        <reflexive file="${proj}/webroot/propertyquote.html">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern=".*feversion=.*" replace="&#60;!-- feversion=${ver} --&#62;" />
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+        <reflexive file="${proj}/VERSION.txt">
+            <filterchain>
+                <replaceregexp>
+                    <regexp pattern=".*version=.*" replace="version=${vernum}" />
+                </replaceregexp>
+            </filterchain>
+        </reflexive>
+    </target>
+
+
+
+
+    <!-- ============================================  -->
+    <!-- Target: build_all                             -->
+    <!-- ============================================  -->
+    <target name="build_all">
+        <!--Build the states from the core files and the dif files -->
+        <phingcall target="clone_fe_core" />
+        <phingcall target="clone_iqs" />
+        <phingcall target="copy_iqs" />
+        <phingcall target="build_webroot" />
+        <foreach list="${states}" param="state" target="build_states" >
+            <property name="curstate" value="${state}"/>
+            <property name="fefinalfolder" value="${proj}/webroot/products/${state}"/>
+            <property name="fecorefolder" value="${proj}/dev_materials/fe_core_git/states_core" />
+            <property name="fediffolder" value="${proj}/dev_materials/fe_dif/${state}" />
+            <property name="iqsapipath" value="../../Iqs/api.php/" />
+            <property name="gmapsapikey" value="AIzaSyCrIUjvm8hyEmvHsC7asXeI8mgqs6Mg2WE" />
+            <property name="fereactfinalfolder" value="${proj}/dev_materials/fe_react/${state}/browser"/>
+            <property name="fereactcorefolder" value="${proj}/dev_materials/fe_core_git/react_core/browser" />
+            <property name="fereactdiffolder" value="${proj}/dev_materials/fe_dif/react/${state}/browser" />
+        </foreach>
+        <phingcall target="update_version" />
+    </target>
+
+</project>

@@ -1,0 +1,30 @@
+<div class="back-arrow-wrapper">
+    <a class="back-arrow display-none"></a>
+</div>        	
+
+<div class="content-wrapper">
+
+	<h1>Your session has timed out.</h1>
+    <div class="body">
+        <p><a class="recall-href" href="recallquote.html">Click here</a> to continue where you left off.
+            For your safety, your secure browser session has timed out.
+        </p>
+        <p>
+            Thank you for requesting a quote.
+        </p>
+        <div class="QuoteIDWrapper">Quote number:  <strong class="QuoteID"></strong></div>
+    </div>
+
+</div>
+
+<div class="forward-arrow-wrapper">
+    <a class="forward-arrow display-none"></a>
+</div>
+
+<script>
+    if (getZipcode() && getQuoteID()){
+        var recallHref = "recallquote.html?qdata="+btoa(getZipcode()+":"+getQuoteID());
+        $(".recall-href").attr("href", recallHref);
+    }
+</script>
+

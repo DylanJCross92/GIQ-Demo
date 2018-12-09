@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>SageSure Internet Quoting Site - Coming Soon</title>
+<style>
+body {
+	background-color: #e2edf3;
+	margin: 0px;
+	padding: 0px;
+}
+.wrapper {
+	
+}
+.wrapper .container {
+	background-color: #FFF;
+	width: 440px;
+	border: 6px solid #154995;
+	position: absolute;
+	left: 0px;
+	margin: auto;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	height: 250px;
+}
+.wrapper .container .inner-wrapper {
+	margin: 10px;
+	padding: 25px;
+	border: 1px solid #67686b;
+	text-align: center;	
+	
+}
+.wrapper .container .inner-wrapper .logo {
+	font-size: 0px;
+	line-height: 0px;
+	height: 55px;
+}
+.wrapper .container .inner-wrapper .dots {
+	text-align: center;
+	font-family: Calibri, sans-serif;
+	font-size: 35px;
+	line-height: 35px;
+	color: #154995;
+	font-weight: bold;
+	letter-spacing: 15px;
+	margin-bottom: 15px;
+	height: 35px;
+}
+.wrapper .container .inner-wrapper .text-thank-you {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 20px;
+	text-transform: uppercase;
+	color: #67686b;
+}
+.wrapper .container .inner-wrapper .text-thank-you strong {
+	font-size: 23px;
+	line-height: 23px;
+	display: block;
+	margin-top: 0px;
+	margin-right: 0px;
+	margin-bottom: 10px;
+	margin-left: 0px;
+}
+</style>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script>
+var dots = 0;
+
+$(document).ready(function() {
+    setInterval(type, 400);
+});
+
+function type() {
+    if(dots < 3) 
+	{
+        $('.dots').append('.');
+        dots++;
+    } 
+	else 
+	{
+        $('.dots').html('');
+        dots = 0;
+    }
+}
+</script>
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container">
+            <div class="inner-wrapper">
+                <img class="logo" src="assets/occidental-logo.png"/>
+                <div class="dots"></div>
+                <div class="text-thank-you"><strong>One Moment</strong> <div>Thank you for considering OCCIDENTAL </div></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

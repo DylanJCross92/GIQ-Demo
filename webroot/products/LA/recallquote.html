@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="description" content="Get a fast, reliable and secure homeowners insurance quote from GEICO Insurance Agency Portfolio. See how much you can save with our free quote online.">
+<title>GEICO Insurance Agency Portfolio | Homeowners Insurance Quote Online</title>
+<!--[if lte IE 8]>
+<script src="js/html5shiv.js"></script>
+<![endif]-->
+<link href="css/styles.css" rel="stylesheet" type="text/css" />
+<link href="css/jquery-ui/jquery-ui-1.10.4.custom.min.css" rel="stylesheet" type="text/css" />
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui/jquery-ui-1.10.4.custom.min.js"></script>
+<script src="js/address.js"></script>
+<script src="js/plugins.js"></script>
+<script src="js/json2.js" type="text/javascript"></script>
+<script src="js/iqs-service-proxy.js" type="text/javascript"></script>
+<script src="js/iqs-service.js" type="text/javascript"></script>
+<script src="js/jquery.cookie.js" type="text/javascript"></script>
+<script>
+var PropertyQuotePage = false;
+</script>
+<script src="js/config.js"></script>
+<script src="js/frontendOptions/termNames.js"></script>
+<script src="js/validation.js"></script>
+<script src="js/frontendOptions/validationRules.js"></script>
+<script src="js/frontendOptions/errorMessages.js"></script>
+<script src="js/frontendOptions/dropdownMenus.js"></script>
+<script src="js/frontendOptions/propertyInfo.js"></script>
+<script src="js/global.js"></script>
+<script src="js/sitewide.js"></script>
+<script src="js/recallQuote.js"></script>
+<script src="../../js/analytics.js"></script>
+<script src="../../js/mixpanel.js"></script>
+<script src="js/eventTracking.js"></script>
+<script src="js/override.js"></script>
+
+<?php
+	$zipcode = isset($_GET["zipcode"]) ? $_GET["zipcode"] : "";
+	$quoteID = isset($_GET["quoteID"]) ? $_GET["quoteID"] : "";
+	if(isset($_GET["qdata"])){
+	    $qdataDecoded = base64_decode($_GET["qdata"]);
+	    $qdataArray = explode(":", $qdataDecoded);
+	    $zipcode = $qdataArray[0];
+	    $quoteID = $qdataArray[1];
+	}
+?>
+<?php if($zipcode && $quoteID){?>
+	<script>
+    $(function(){
+        
+        recallQuote(<?php echo $zipcode;?>, <?php echo $quoteID;?>);	
+            
+    });
+    </script>
+<?php }?>
+</head>
+<body>
+	<div class="blue-bar">
+    	<div class="center">
+        	<div class="right">Customer Service: <strong>(800) 566-1518</strong></div>
+        </div>
+    </div>
+    
+    <div class="container center">
+        <div class="header">
+            <div class="left"><img src="assets/geico-logo.png"/></div>
+            <div class="right"><span class="label" style="padding-right: 10px;">Underwritten by: </span> <img src="assets/fedNatLogo.png"/></div>
+        </div>
+        
+		<div class="content">
+        	<div class="left">
+                <div class="back-arrow-wrapper">
+                    <a class="back-arrow display-none"></a>
+                </div>   
+                <div class="content-wrapper">
+                	<h4>Welcome back!</h4>
+                    <div class="body large tb-15-margin">
+                    	You are on your way to completing a homeowners quote with GEICO Insurance Agency. Retrieve your existing quote, and we will pick up where you left off.
+                    </div>            
+                    <div class="two-col" style="margin-top:25px;">
+                    	<div class="left" style="border-right:solid 1px #000">
+                        	<h1>Existing Quote</h1>
+                            <form class="retrieve-quote">
+                            
+                                <label for="QuoteNumber">Quote Number:</label>
+                                <input name="QuoteNumber" type="text" id="QuoteNumber" value="<?php echo $quoteID?>"/>
+                                
+                                <label for="ZipCode">Zip Code:</label>
+                                <input name="ZipCode" type="text" id="ZipCode" value="<?php echo $zipcode?>"/>
+                                
+                                <div class="tb-15-margin"></div>
+                                
+                                <a href="javascript:void(0);" class="button blue retrieve-quote" onClick="recallQuote();">Retrieve a Quote</a>
+                            
+                            </form>
+                        </div>
+                        
+                        <div class="right">
+                        	<h1 class="orange">New Quote</h1>
+                            
+                            <label for="ZipCode2">Start your free homeowners quote now.</label>
+                			
+                            <div class="tb-15-margin"></div>
+                            
+                            <a href="https://www.geico.com/getaquote/homeowners/" target="_blank" class="button orange new-quote">Get a Quote</a>
+                        </div>
+                    	
+                    </div>
+                    
+                    
+                </div>
+                <div class="forward-arrow-wrapper">
+                    <a class="forward-arrow display-none"></a>
+                </div>      
+                
+                
+            </div>
+            <div class="right">
+            <script>
+			$(function(){
+				
+				$(".content > .right").load("section/sidebar/section-1.html");
+				
+			});
+			</script>
+            </div>
+        </div>
+	
+        <div class="footer">
+            <div class="left">
+                © 2016 Federated National Insurance Company   |  <a href="http://www.fednat.com/about-us/" target="_blank">About Us</a>  |  <a href="http://www.fednat.com/home/privacy-policy/" target="_blank">Privacy Policy</a>
+            </div>
+            
+            <div class="right">
+                <a href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=quotes.occidentalhomeowners.com&lang=en" target="_blank"><img src="assets/verisign-logo.png"/></a>
+            </div>
+        </div>
+    
+    </div>
+
+<script>
+$(function(){
+	PixelTracking("recallquote");
+});
+</script>
+</body>
+<style>
+    .overlay-wrapper .overlay-container {
+        transform: none !important;
+        -ms-transform: none !important;
+    }
+</style>
+</html>

@@ -1,0 +1,21 @@
+<div class="overlay-wrapper" style="display:block;">
+    <div class="overlay-container wide">
+    
+        <h2>Select the style that best matches the home you are insuring.</h2>
+        <div class="sub-header">Place cursor on image to see descriptions for each home style.</div>
+        
+        <script>
+        $(function(){
+            loadHomeInfo(PropertyInfo.HomeStyle);
+        });
+        </script>
+        
+        <ul class="selection-list v-align-bot home-style"></ul>
+        
+        <div class="button-wrapper">
+            <a class="button gray close-overlay-wrapper">Cancel</a>
+            <a class="button orange accept-selection" data-for="S3_StructureType" data-selection-type="StructureType">OK</a>
+        </div>
+    
+    </div>
+</div>    

@@ -1,0 +1,1188 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"baco",
+				"background-color"
+			],
+			[
+				"cl",
+				"closeAlertDispatch"
+			],
+			[
+				"set",
+				"SET_ALERT"
+			],
+			[
+				"Cl",
+				"CLOSE_ALERT"
+			],
+			[
+				"O",
+				"OPEN_ALERT"
+			],
+			[
+				"op",
+				"OPEN_ALERT"
+			],
+			[
+				"tea",
+				"teacher-assignments"
+			],
+			[
+				"pane",
+				"panel-header"
+			],
+			[
+				"Ch",
+				"ChatMessageContainer"
+			],
+			[
+				"message",
+				"messageList"
+			],
+			[
+				"get",
+				"getUsersInRoom"
+			],
+			[
+				"add",
+				"addToRoom"
+			],
+			[
+				"us",
+				"userFunc"
+			],
+			[
+				"im",
+				"imageUrl"
+			],
+			[
+				"cone",
+				"connect"
+			],
+			[
+				"_u",
+				"_userChangedName"
+			],
+			[
+				"_",
+				"_userChangedName"
+			],
+			[
+				"_user",
+				"_userLeft"
+			],
+			[
+				"new",
+				"newMessage"
+			],
+			[
+				"handl",
+				"handleMessageSubmit"
+			],
+			[
+				"t",
+				"teacher_id"
+			],
+			[
+				"ass",
+				"assignments"
+			],
+			[
+				"for",
+				"formattedQuiz"
+			],
+			[
+				"br",
+				"browserHistory"
+			],
+			[
+				"as",
+				"assignmentId"
+			],
+			[
+				"assi",
+				"assignment"
+			],
+			[
+				"onEnter",
+				"onEnterAssignment"
+			],
+			[
+				"con",
+				"containers"
+			],
+			[
+				"ta",
+				"taskId"
+			],
+			[
+				"SET_T",
+				"SET_TASK"
+			],
+			[
+				"S",
+				"SET_TASK"
+			],
+			[
+				"load",
+				"loadQuiz"
+			],
+			[
+				"on",
+				"onEnterStudent"
+			],
+			[
+				"map",
+				"mapDispatch"
+			],
+			[
+				"a",
+				"assignment"
+			],
+			[
+				"com",
+				"CompletedAssignmentContainer"
+			],
+			[
+				"Comp",
+				"CompletedAssignmentContainer"
+			],
+			[
+				"creat",
+				"createQuiz"
+			],
+			[
+				"validate",
+				"validateQuiz"
+			],
+			[
+				"qu",
+				"questionArrayErrors"
+			],
+			[
+				"que",
+				"questionErrors"
+			],
+			[
+				"Create",
+				"CreateQuestions"
+			],
+			[
+				"render",
+				"renderTextArea"
+			],
+			[
+				"sign",
+				"SignUpContainer"
+			],
+			[
+				"val",
+				"validatePassword"
+			],
+			[
+				"U",
+				"UpdatePasswordContainer"
+			],
+			[
+				"up",
+				"UpdatePasswordContainer"
+			],
+			[
+				"complete",
+				"completedQuiz"
+			],
+			[
+				"curre",
+				"currentAssignment"
+			],
+			[
+				"cur",
+				"currentAssignment"
+			],
+			[
+				"R",
+				"RenderField"
+			],
+			[
+				"m",
+				"mustBeLoggedIn"
+			],
+			[
+				"Se",
+				"SET_QUIZ"
+			],
+			[
+				"se",
+				"sequelize"
+			],
+			[
+				"Aler",
+				"AlertFormContainer"
+			],
+			[
+				"T",
+				"TouchableHighlight"
+			],
+			[
+				"c",
+				"codename"
+			],
+			[
+				"react",
+				"react-redux"
+			],
+			[
+				"L",
+				"LoginContainer"
+			],
+			[
+				"A",
+				"AlertMarkerContainer"
+			],
+			[
+				"time",
+				"timestamp"
+			],
+			[
+				"coo",
+				"coords"
+			],
+			[
+				"in",
+				"initialPosition"
+			],
+			[
+				"Admin",
+				"AdminOrderContainer"
+			],
+			[
+				"loadA",
+				"loadAdminOrder"
+			],
+			[
+				"Ord",
+				"OrderList"
+			],
+			[
+				"SET",
+				"SET_ALL_ORDERS"
+			],
+			[
+				"check",
+				"checkoutCart"
+			],
+			[
+				"co",
+				"components"
+			],
+			[
+				"su",
+				"submitting"
+			],
+			[
+				"form",
+				"form-group"
+			],
+			[
+				"Checko",
+				"CheckoutForm"
+			],
+			[
+				"padd",
+				"padding-left"
+			],
+			[
+				"SET_",
+				"SET_CAT_PRODUCTS"
+			],
+			[
+				"ME",
+				"NEW_MESSAGE"
+			],
+			[
+				"M",
+				"MESSAGES_RECEIVED"
+			],
+			[
+				"Me",
+				"MESSAGES_LOADING"
+			],
+			[
+				"hand",
+				"handleBodyChange"
+			],
+			[
+				"chap",
+				"chapterId"
+			],
+			[
+				"sin",
+				"singlePuppyReducer"
+			],
+			[
+				"al",
+				"allPuppiesReducer"
+			],
+			[
+				"cre",
+				"createLogger"
+			],
+			[
+				"ma",
+				"mapDispatchToProps"
+			],
+			[
+				"log",
+				"logoutUser"
+			],
+			[
+				"dele",
+				"deleteUser"
+			],
+			[
+				"Lo",
+				"LOGOUT_USER"
+			],
+			[
+				"han",
+				"handleChangeEmail"
+			],
+			[
+				"handleChan",
+				"handleChangePassword"
+			],
+			[
+				"current",
+				"currentSongList"
+			],
+			[
+				"Lyrics",
+				"LyricsContainer"
+			],
+			[
+				"song",
+				"songQuery"
+			],
+			[
+				"Filter",
+				"FilterableArtistsContainer"
+			],
+			[
+				"p",
+				"params"
+			],
+			[
+				"book",
+				"bookRouter"
+			],
+			[
+				"ST",
+				"START_PLAYING"
+			],
+			[
+				"play",
+				"playerReducer"
+			],
+			[
+				"ly",
+				"lyricsReducer"
+			],
+			[
+				"pr",
+				"propsToSend"
+			],
+			[
+				"son",
+				"songQuery"
+			],
+			[
+				"s",
+				"songQuery"
+			],
+			[
+				"art",
+				"artistQuery"
+			],
+			[
+				"ad",
+				"addSong"
+			],
+			[
+				"select",
+				"selectedPlaylist"
+			],
+			[
+				"Son",
+				"SongAdder"
+			],
+			[
+				"ap",
+				"AppContainer"
+			],
+			[
+				"nex",
+				"nextPlaylistId"
+			],
+			[
+				"ne",
+				"nextPlaylistId"
+			],
+			[
+				"pl",
+				"playlist"
+			],
+			[
+				"selec",
+				"selectedPlaylist"
+			],
+			[
+				"event",
+				"event-emitter"
+			],
+			[
+				"pos",
+				"possibleValues"
+			],
+			[
+				"lin",
+				"linesLen2Min"
+			],
+			[
+				"linesLen",
+				"linesLen3Min"
+			],
+			[
+				"LinesLen",
+				"linesLen3Max"
+			],
+			[
+				"min",
+				"minimizingPlayer"
+			],
+			[
+				"maxim",
+				"maximizingPlayer"
+			],
+			[
+				"it",
+				"itineraryItem"
+			],
+			[
+				"ac",
+				"activitySelect"
+			],
+			[
+				"re",
+				"restaurantSelect"
+			],
+			[
+				"hotels",
+				"hotels"
+			],
+			[
+				"res",
+				"restaurants"
+			],
+			[
+				"setA",
+				"setAngularVelocity"
+			],
+			[
+				"0x",
+				"0x00ff00"
+			],
+			[
+				"ar",
+				"articleId"
+			],
+			[
+				"find",
+				"findById"
+			],
+			[
+				"bod",
+				"bodyParser"
+			],
+			[
+				"u",
+				"urlTitle"
+			],
+			[
+				"va",
+				"values"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "iqs-admin/public/login.php",
+			"settings":
+			{
+				"buffer_size": 1067,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "iqs.sublime-project",
+			"settings":
+			{
+				"buffer_size": 393,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "Xdebug Context",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "Xdebug Watch",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix",
+				"name": "Xdebug Stack",
+				"read_only": true,
+				"scratch": true
+			}
+		},
+		{
+			"contents": "=> /Users/galxzx/OHS/iqs/iqs-admin/index.php\n  |+| 3\n=> /Users/galxzx/OHS/iqs/iqs-admin/public/index.php\n  |+| 2\n=> /Users/galxzx/OHS/iqs/iqs-admin/public/login.php\n  |+| 3\n",
+			"settings":
+			{
+				"buffer_size": 173,
+				"line_ending": "Unix",
+				"name": "Xdebug Breakpoint",
+				"read_only": true,
+				"scratch": true
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "ins",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 485.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/galxzx/OHS/iqs"
+	],
+	"file_history":
+	[
+		"/Users/galxzx/OHS/iqs/iqs.sublime-project",
+		"/Users/galxzx/OHS/iqs/dev_materials/docker_scripts/ohs_docker/mac.yml",
+		"/Users/galxzx/OHS/iqs/.git/MERGE_MSG",
+		"/Users/galxzx/OHS/iqs-fe-core/.git/COMMIT_EDITMSG",
+		"/Users/galxzx/OHS/iqs/.git/COMMIT_EDITMSG",
+		"/Users/galxzx/OHS/test_iqs_db_new.sql",
+		"/Users/galxzx/OHS/fednat-iqs-fe/.git/COMMIT_EDITMSG",
+		"/Users/galxzx/OHS/GIQ/SageSure-IQS/giq/js/mixpanel.js",
+		"/Users/galxzx/OHS/GIQ/SageSure-IQS/.git/COMMIT_EDITMSG",
+		"/Users/galxzx/.bash_profile",
+		"/usr/local/etc/php/5.6/php.ini",
+		"/etc/php.ini.default",
+		"/usr/local/etc/apache2/2.4/httpd.conf",
+		"/etc/paths",
+		"/private/etc/apache2/httpd.conf",
+		"/etc/php.ini",
+		"/Users/galxzx/fullstack/pegma/.git/MERGE_MSG",
+		"/Users/galxzx/fullstack/pegma/README.md",
+		"/Users/galxzx/fullstack/pegma/app/components/Login.jsx",
+		"/Users/galxzx/fullstack/pegma/db/seed.js",
+		"/Users/galxzx/fullstack/pegma/app/components/CompletedQuiz.jsx",
+		"/Users/galxzx/fullstack/pegma/public/index.html",
+		"/Users/galxzx/fullstack/pegma/app/routes.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/TeacherStudents.jsx",
+		"/Users/galxzx/fullstack/pegma/app/reducers/teacher.jsx",
+		"/Users/galxzx/fullstack/pegma/app/containers/QuizContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/app/reducers/alert.jsx",
+		"/Users/galxzx/fullstack/pegma/app/reducers/library.jsx",
+		"/Users/galxzx/fullstack/pegma/app/containers/TeacherFunctionsContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/app/containers/AlertModalContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/app/reducers/index.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/App.jsx",
+		"/Users/galxzx/fullstack/pegma/assets/stylesheets/style.scss",
+		"/Users/galxzx/fullstack/pegma/app/components/AlertModal.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/Home.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/TeacherApp.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/Settings.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/FAQ.jsx",
+		"/Users/galxzx/fullstack/pegma/server/students.js",
+		"/Users/galxzx/fullstack/pegma/app/components/TeacherFunctions.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/CreateQuestions.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/RenderError.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/CreateQuiz.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/Chatbox.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/Quiz.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/CompletedAssignment.jsx",
+		"/Users/galxzx/fullstack/pegma/app/containers/ChatboxContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/StudentApp.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/StudentTracker.jsx",
+		"/Users/galxzx/fullstack/pegma/public/bundle.js",
+		"/Users/galxzx/fullstack/pegma/app/components/Dashboard/TeacherAssignmentsPanel.jsx",
+		"/Users/galxzx/fullstack/pegma/server/start.js",
+		"/Users/galxzx/fullstack/pegma/app/components/CreateTask.jsx",
+		"/Users/galxzx/fullstack/pegma/app/containers/CreateTaskContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/StudentDashboard.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/Dashboard/StudentAssignmentsPanel.jsx",
+		"/Users/galxzx/fullstack/pegma/server/library.js",
+		"/Users/galxzx/fullstack/pegma/server/sockets.js",
+		"/Users/galxzx/fullstack/pegma/app/components/WhoAmI.jsx",
+		"/Users/galxzx/fullstack/pegma/app/containers/StudentReportCardContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/app/containers/StudentSettingsContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/StudentSettings.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/StudentReportCard.jsx",
+		"/Users/galxzx/fullstack/pegma/db/models/student.js",
+		"/Users/galxzx/fullstack/pegma/db/models/user.js",
+		"/Users/galxzx/fullstack/pegma/server/teachers.js",
+		"/Users/galxzx/fullstack/pegma/app/components/Signup.jsx",
+		"/Users/galxzx/fullstack/pegma/app/reducers/student.jsx",
+		"/Users/galxzx/fullstack/pegma/db/models/quiz.js",
+		"/Users/galxzx/fullstack/pegma/app/containers/TaskContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/Task.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/Assignment.jsx",
+		"/Users/galxzx/fullstack/pegma/app/reducers/auth.jsx",
+		"/Users/galxzx/fullstack/pegma/package.json",
+		"/Users/galxzx/fullstack/pegma/app/containers/CompletedAssignmentContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/app/containers/UpdatePasswordContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/server/users.js",
+		"/Users/galxzx/fullstack/pegma/app/components/RenderField.jsx",
+		"/Users/galxzx/fullstack/pegma/app/validators/validateSignup.js",
+		"/Users/galxzx/fullstack/pegma/app/validators/validateQuiz.js",
+		"/Users/galxzx/fullstack/pegma/.gitignore",
+		"/Users/galxzx/fullstack/pegma/app/components/TeacherDashboard.jsx",
+		"/Users/galxzx/fullstack/pegma/app/containers/CreateQuizContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/server/auth.js",
+		"/Users/galxzx/fullstack/pegma/app/components/UpdatePassword.jsx",
+		"/Users/galxzx/fullstack/pegma/app/validators/validatePassword.js",
+		"/Users/galxzx/fullstack/pegma/app/containers/SignupContainer.jsx",
+		"/Users/galxzx/fullstack/pegma/app/reducers/signup.jsx",
+		"/Users/galxzx/fullstack/pegma/app/components/validatePassword.js",
+		"/Users/galxzx/fullstack/pegma/db/models/assignment.js",
+		"/Users/galxzx/fullstack/pegma/server/quizzes.js",
+		"/Users/galxzx/fullstack/pegma/db/models/task.js",
+		"/Users/galxzx/fullstack/pegma/db/models/question.test.js",
+		"/Users/galxzx/fullstack/pegma/db/models/index.js",
+		"/Users/galxzx/fullstack/swarm-server/models/alerts.js",
+		"/Users/galxzx/fullstack/swarm-server/models/users.js",
+		"/Users/galxzx/fullstack/swarm-server/app.js",
+		"/Users/galxzx/fullstack/swarm-server/routes/index.js",
+		"/Users/galxzx/fullstack/Swarm/node_modules/react-native/Libraries/Renderer/src/renderers/shared/stack/reconciler/ReactCompositeComponent.js",
+		"/Users/galxzx/fullstack/Swarm/android/app/build.gradle",
+		"/Users/galxzx/fullstack/Swarm/node_modules/react-native-device-info/android/build.gradle",
+		"/Users/galxzx/fullstack/Swarm/node_modules/react-native/Libraries/BatchedBridge/MessageQueue.js",
+		"/Users/galxzx/fullstack/Swarm/SwarmMap.js",
+		"/Users/galxzx/fullstack/Swarm/PageOne.js",
+		"/Users/galxzx/AwesomeProject/index.android.js",
+		"/Users/galxzx/AwesomeProject/android/app/src/main/AndroidManifest.xml",
+		"/Users/galxzx/fullstack/Swarm/node_modules/react-native/Libraries/Renderer/src/renderers/shared/stack/reconciler/instantiateReactComponent.js",
+		"/Users/galxzx/fullstack/Swarm/node_modules/react-native/Libraries/Renderer/src/renderers/native/ReactNativeBaseComponent.js",
+		"/Users/galxzx/.bashrc",
+		"/Users/galxzx/fullstack/ShippingShips/server/auth.filters.js",
+		"/Users/galxzx/fullstack/ShippingShips/app/components/checkoutValidate.js",
+		"/Users/galxzx/fullstack/ShippingShips/public/stylesheets/style.css",
+		"/Users/galxzx/fullstack/ShippingShips/app/components/Landing.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/app/components/OrderList.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/app/components/AdminOrders.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/app/components/AdminOrder.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/app/containers/AdminOrderContainer.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/app/routes.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/app/containers/OrderLandingContainer.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/app/components/OrderLanding.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/app/containers/AdminOrdersContainer.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/db/models/user.test.js",
+		"/Users/galxzx/fullstack/ShippingShips/db/models/product.test.js",
+		"/Users/galxzx/fullstack/ShippingShips/db/models/product.js",
+		"/Users/galxzx/fullstack/ShippingShips/app/reducers/user.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/app/reducers/cart.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/app/components/AddProduct.jsx",
+		"/Users/galxzx/fullstack/ShippingShips/server/users.js"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"Full",
+			"IQS",
+			"console",
+			"xd",
+			"extens",
+			"xdebug",
+			"php",
+			"include_",
+			"php",
+			"console",
+			"AssignmentsPanel",
+			"'History Essay #1'",
+			"-",
+			"\n-",
+			"AlertModalCo",
+			"AlertModal",
+			"ChatMessage",
+			"alert",
+			"completed",
+			"archived",
+			"messageList",
+			"userNames",
+			"getId",
+			"setId",
+			"CreateQuiz",
+			"id",
+			"Quiz",
+			"quiz",
+			"Quiz",
+			"quiz",
+			"Quiz",
+			"quiz",
+			"Quiz",
+			"loadQuiz",
+			"Assignment",
+			"Signup",
+			"inquiry",
+			"\"RenderField\"",
+			"=\"",
+			"UpdatePassword",
+			"updatePassword",
+			"UpdatePassword",
+			"\"input\"",
+			"StudentSettings",
+			"studentSettings",
+			"StudentSettings",
+			"quiz",
+			"Quiz",
+			"Assignment",
+			"sequelize",
+			"\"18\"",
+			"darkgray",
+			"+",
+			"\n+",
+			"photoUrl",
+			"state",
+			"zipcode",
+			"Month",
+			"city",
+			"name",
+			"zipcode",
+			"name",
+			"Name",
+			"name",
+			"Name",
+			"name",
+			"address",
+			"Address",
+			"address",
+			"+",
+			"MAMMAL",
+			"mammal",
+			"layer",
+			"hotel",
+			"hotels",
+			"ul",
+			"input",
+			"header"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "iqs-admin/public/login.php",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 1067,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								34,
+								34
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "iqs.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 393,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								340,
+								340
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 43.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		},
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 4,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 173,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								168,
+								168
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
+							"word_wrap": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 108.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				2,
+				1
+			],
+			[
+				0,
+				1,
+				1,
+				2
+			],
+			[
+				1,
+				1,
+				2,
+				2
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.5,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			0.7,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.xdebug":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "",
+	"project": "iqs.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+		"xdebug":
+		{
+			"hide_conflict": false,
+			"restore_index":
+			{
+				"19":
+				{
+					"group": 0,
+					"index": 0
+				}
+			},
+			"restore_layout":
+			{
+				"cells":
+				[
+					[
+						0,
+						0,
+						1,
+						1
+					]
+				],
+				"cols":
+				[
+					0.0,
+					1.0
+				],
+				"rows":
+				[
+					0.0,
+					1.0
+				]
+			}
+		}
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 238.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

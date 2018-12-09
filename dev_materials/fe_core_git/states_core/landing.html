@@ -1,0 +1,116 @@
+
+<style>
+
+.organge-button, a.orange-button {
+	background-color: #ee6d00;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 18px;
+	line-height: 18px;
+	font-weight: normal;
+	color: #FFF;
+	text-decoration: none;
+	width: 120px;
+	display: inline-block;
+	padding-top: 7px;
+	padding-right: 15px;
+	padding-bottom: 7px;
+	padding-left: 15px;
+	margin: 0px;
+	cursor: pointer;
+}
+.wrapper {
+	background-color: rgba(149, 149, 149, 0.6);
+	position: fixed;
+	left: 0px;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+}
+.wrapper .container {
+	background-color: #FFF;
+	width: 690px;
+	border: 4px solid #154995;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	height: 273px;
+	margin-top: -137px;
+	margin-left: -351px;
+}
+.wrapper .container .inner-wrapper {
+	margin: 5px;
+	padding: 25px;
+	border: 1px solid #67686b;
+	text-align: center;
+	position: relative;
+}
+.wrapper .container .inner-wrapper .close {
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	cursor: pointer;
+}
+.wrapper .container .inner-wrapper .header {
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 26px;
+	line-height: 26px;
+	font-weight: bold;
+	color: #154995;
+	text-transform: uppercase;
+}
+.wrapper .container .inner-wrapper .body {
+	border-top-width: 1px;
+	border-bottom-width: 1px;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-top-color: #bcc3c7;
+	border-bottom-color: #bcc3c7;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 16px;
+	line-height: 22px;
+	color: #67686b;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	margin-top: 15px;
+	margin-bottom: 15px;
+	white-space: normal;
+}
+</style>
+
+
+    <div class="wrapper overlay">
+      <div class="container">
+            <div class="inner-wrapper">
+            	<img class="close close-popup" src="assets/close-x.png" />
+                <div class="header">important information</div>
+                <div class="body">
+                You are connecting to the Occidental website for your insurance quote. If you purchase a home policy from Occidental, the policy will be serviced by GEICO Insurance Agency, Inc. and will be underwritten by Occidental. The Occidental <a href="https://service.occidentalhomeowners.com/privacy.html" target="_blank">Privacy Policy</a> and <a href="https://service.occidentalhomeowners.com/terms.html" target="_blank">Terms & Conditions</a> will apply.
+                </div>
+                
+                <a class="button orange orange-button close-popup">OK</a>
+                
+          </div>
+        </div>
+    </div>
+
+<script>
+$(function(){
+	$(document).on("click", ".close-popup", function(){
+			
+		$(".wrapper").hide().remove();
+			
+	});
+	
+	// Trigger events on keypress
+	$(document).on("keypress", function(e){
+		 
+	 //On Escape 
+	 if (e.keyCode == 27)
+	 {
+		 $(".close-popup").trigger("click");
+	 }
+	 
+	});
+		
+});
+</script>

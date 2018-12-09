@@ -1,0 +1,20 @@
+{
+	"folders":
+	[
+		{
+      "follow_symlinks": true,
+      "path": "."
+    }
+	],
+  "settings": {
+        "xdebug": {
+        "path_mapping": {
+                 "/var/www" : "/Users/mattwatson/dev/vagrant-wp-base/public",
+            },
+            "url": "http://localhost:8080/",
+            "port": 9000,
+            "super_globals": true,
+            "close_on_stop": true
+        }
+    }
+}

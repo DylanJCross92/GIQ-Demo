@@ -1,0 +1,82 @@
+<div class="quote-wrapper">
+    <img class="quote-corner-ribbon" src="assets/quote-corner-ribbon.png"/>
+                
+    <h1 class="indent">Quote Number <span class="QuoteID"></span> <span class="quote-actions email-quote"><!--<img src="assets/mail-icon.png"/><a href="#" onClick="return false;">Email Quote</a></span>--><span class="quote-actions print-quote" style="display:none;"><img src="assets/pdf-icon.png"/><a href="#" onClick="getQuotePdf(); return false;">Print Quote</a></span></h1>
+
+    <div class="contact-geico-wrapper">
+    	<h4>CALL GEICO Insurance Agency TODAY</h4>
+        <div class="body oversized" style="margin-top:8px; margin-bottom:8px;">
+        	To buy this homeowners policy, 
+			please call GEICO Insurance Agency at <span class="blue">(800) 566-1518</span>
+			and mention quote <span class="orange QuoteID"></span>.
+        </div>
+        
+        <div class="body small blue bold">
+        Rates are subject to change, purchase now to secure your rate.
+In a hurry? <a href="#" onClick="return false;" class="orange load-selection-popup" data-filename="popups/save-quote.php">Save your quote</a> and come back later.
+        </div>
+    </div>
+    
+    <h1 class="indent">Select an option for coverage details below</h1>
+    
+    <ul class="coverage-options-wrapper">
+        <div class="head-wrapper">
+            <div class="col1"></div><div class="col2">QUOTE</div><div class="col3">ANNUAL PREMIUM</div>
+        </div>
+        
+		<li class="preferred selected" data-quote-type="preferred" data-confirmation="false" data-load="section/5/quote-details/default-quotes.html">
+            <div class="col1"><input type="radio" name="quote-type" checked/></div>
+            <div class="col2">
+                <div class="title">$1000 Deductible</div>
+            </div>    
+            <div class="col3">
+            	<a href="#" onClick="return false;" class="payment-plans load-selection-popup" data-filename="section/5/payment-plans.html">Payment Plans</a>
+              	<div class="amount"></div>
+            </div>
+		</li>
+            
+        <li class="basic" data-quote-type="basic" data-confirmation="false" data-load="section/5/quote-details/default-quotes.html">
+            <div class="col1"><input type="radio" name="quote-type"/></div>
+            <div class="col2">
+            	<div class="title">$2500 Deductible</div>
+            </div>  
+            <div class="col3">
+                <a href="#" onClick="return false;" class="payment-plans load-selection-popup" data-filename="section/5/payment-plans.html">Payment Plans</a>
+                <div class="amount"></div>
+            </div>
+        </li>
+            
+  	  	<li class="custom" data-quote-type="custom" data-confirmation="true" data-load="section/5/quote-details/customized-quotes.html">
+        	<div class="col1"><input type="radio" name="quote-type"/></div>
+                <div class="col2">
+                <div class="title">Customized Quote</div>
+        	</div>  
+            <div class="col3">
+            	<a href="#" onClick="return false;" class="payment-plans load-selection-popup" data-filename="section/5/payment-plans.html">Payment Plans</a>
+            	<div class="amount">
+                	<a href="#" onClick="return false;" class="blue-17 choose-options">Choose options</a>
+                </div>
+            </div>
+        </li>
+    
+    </ul>
+    
+    
+    <h4 class="indent">Coverage Details</h4>
+     	
+    <div class="quote-details-wrapper"></div>
+    
+    
+    <div class="notice-box">
+   	  <h1>Flood Damage</h1>
+      <div class="body">
+      	This policy does not cover flood damage. To protect your home against floods, please 
+contact a GEICO Insurance Agency Customer Service Representative at <strong>(800) 566-1518</strong>.
+      </div>
+  </div>
+  
+  <div class="tb-15-margin remove-b-margin blue-13 italic text-center">
+  	Additional options may be available by calling GEICO Insurance Agency at (800) 566-1518
+  </div>
+  
+</div>

@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="shortcut icon" type="image/png" href="assets/favicon.png"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="description" content="Get a fast, reliable and secure homeowners insurance quote from GEICO Insurance Agency Portfolio. See how much you can save with our free quote online.">
+    <title>GEICO Insurance Agency Portfolio | Homeowners Insurance Quote Online</title>
+    <!--[if lte IE 8]>
+    <script src="js/html5shiv.js"></script>
+    <![endif]-->
+    <link href="css/styles.css" rel="stylesheet" type="text/css" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/root.js"></script>
+    <script src="js/analytics.js"></script>
+    <script src="js/mixpanel.js"></script>
+    <script src="js/eventTracking.js"></script>
+    <script>
+        function recallQuote(){
+
+            var QuoteIDValue = $.trim($("form.retrieve-quote [name='QuoteNumber']").val());
+            var ZipCodeValue = $.trim($("form.retrieve-quote [name='ZipCode']").val());
+
+            $.ajax({
+                type: "POST",
+                url: "ajax/state_lookup.php?zipcode="+ZipCodeValue+"&quoteID="+QuoteIDValue,
+                success: function(html){
+
+                    window.location = $.trim(html);
+
+                }
+            });
+
+        }
+        function autoRecallQuote(){
+            //get the qstring values
+            var qdata = getParameterByName("qdata");
+
+
+            if(qdata!==null){
+
+                //decode
+                var decodedQdata = atob(qdata);
+
+                //split
+                var qDataArray = decodedQdata.split(':');
+                var ZipCodeValue = qDataArray[0];
+                var QuoteIDValue = qDataArray[1];
+
+                $("#QuoteNumber").val(QuoteIDValue);
+                $("#ZipCode").val(ZipCodeValue);
+
+                recallQuote();
+
+            }
+
+        }
+
+        function getParameterByName(name, url) {
+            if (!url) {
+                url = window.location.href;
+            }
+            name = name.replace(/[\[\]]/g, "\\$&");
+            var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+                results = regex.exec(url);
+            if (!results) return null;
+            if (!results[2]) return '';
+            return decodeURIComponent(results[2].replace(/\+/g, " "));
+        }
+
+        $(function() {
+            autoRecallQuote();
+        });
+    </script>
+</head>
+<body>
+<div class="blue-bar">
+    <div class="center">
+        <div class="right">Customer Service: <strong>@phonenumber@</strong></div>
+    </div>
+</div>
+
+<div class="container center">
+    <div class="header">
+        <div class="left"><img src="assets/geico-logo.png"/></div>
+        <div class="right"><span class="label" style="padding-right: 10px;">Underwritten by: </span> <img src="assets/fedNatLogo.png"/></div>
+    </div>
+
+    <div class="content">
+        <div class="left">
+            <div class="back-arrow-wrapper">
+                <a class="back-arrow display-none"></a>
+            </div>
+            <div class="content-wrapper">
+                <h4>Welcome back!</h4>
+                <div class="body large tb-15-margin">
+                    You are on your way to completing a homeowners quote with GEICO Insurance Agency. Retrieve your existing quote, and we will pick up where you left off.
+                </div>
+                <div class="two-col" style="margin-top:25px;">
+                    <div class="left" style="border-right:solid 1px #000">
+                        <h1>Existing Quote</h1>
+                        <form class="retrieve-quote">
+
+                            <label for="QuoteNumber">Quote Number:</label>
+                            <input name="QuoteNumber" type="text" id="QuoteNumber"/>
+
+                            <label for="ZipCode">Zip Code:</label>
+                            <input name="ZipCode" type="text" id="ZipCode"/>
+
+                            <div class="tb-15-margin"></div>
+
+                            <a href="javascript:void(0);" class="button blue retrieve-quote" onClick="recallQuote();">Retrieve a Quote</a>
+
+                        </form>
+                    </div>
+
+                    <div class="right">
+                        <h1 class="orange">New Quote</h1>
+
+                        <label for="ZipCode2">Start your free homeowners quote now.</label>
+
+                        <div class="tb-15-margin"></div>
+
+                        <a href="https://www.geico.com/getaquote/homeowners/" target="_blank" class="button orange new-quote">Get a Quote</a>
+                    </div>
+
+                </div>
+
+
+            </div>
+            <div class="forward-arrow-wrapper">
+                <a class="forward-arrow display-none"></a>
+            </div>
+
+
+        </div>
+        <div class="right">
+            <img class="top-logo" src="assets/geico-logo-3.png"/>
+
+            <div class="geico-welcome">Welcome to Federated National Insurance Company,&nbsp;a  GEICO Insurance Agency  homeowners insurance provider.</div>
+
+            <ul class="icon-boxes">
+                <li>
+                    <img src="assets/geico-timer.png"/>
+                    Get an online quote in less than 5 minutes!
+                </li>
+                <li>
+                    <img src="assets/geico-target.png"/>
+                    The more info you provide, the more accurate of a quote will be provided.
+                </li>
+            </ul>
+
+            <div class="line-break"></div>
+
+            <div class="geico-header">GEICO Insurance Agency</div>
+            <div class="geico-phone-number">@phonenumber@</div>
+            <div class="body small" style="font-size:12px;margin-left:-5px;margin-right:-5px;">
+                <strong>HOURS OF OPERATION</strong><br />
+                Mon.-Fri. 7:30 AM - 1:00 AM ET<br />
+                Sat. - Sun. 8:00 AM - 10:30 PM ET
+            </div>
+
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="left">
+            © 2016 Federated National Insurance Company  |  <a href="http://www.fednat.com/about-us/" target="_blank">About Us</a>  |  <a href="http://www.fednat.com/home/privacy-policy/" target="_blank">Privacy Policy</a>
+        </div>
+
+        <div class="right">
+            <a href="https://trustsealinfo.verisign.com/splash?form_file=fdf/splash.fdf&dn=quotes.occidentalhomeowners.com&lang=en" target="_blank"><img src="assets/verisign-logo.png"/></a>
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

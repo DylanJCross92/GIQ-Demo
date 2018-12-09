@@ -1,0 +1,95 @@
+<div class="overlay-wrapper" style="display:block;">
+    <div class="overlay-container wide">
+        <img class="close-x close-overlay-wrapper" src="assets/close-x.png" />
+        <h2>Direct Bill or Mortgagee Payment Plans</h2>
+        <div class="sub-header">Available in 2, 4 or 10 installments</div>
+     	<br>
+               
+        <table class="table"style="width:100%" border="0" cellspacing="0" cellpadding="0">
+        
+          <tr>
+            <th scope="col">Payment Plans</th>
+            <th scope="col">Total Amount</th>
+            <th scope="col">Down Payment Amount</th>
+            <th scope="col">Installment Amount</th>
+            <th scope="col">Fee Per Installment</th>
+            <th scope="col"># of Installments</th>
+            <th scope="col">Installments Due (based on policy effective date)</th>
+          </tr>
+          <tr>
+            <th scope="row">Annual</th>
+            <td class="TotalPremium bold"></td>
+            <td class="TotalPremium"></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+          </tr>
+          <tr>
+            <th scope="row">2-Pay</th>
+            <td class="TwoPayTotalBalance bold"></td>
+            <td class="TwoPayAmountDue"></td>
+            <td class="TwoPayRemainingBalance"></td>
+            <td>$6</td>
+            <td>1</td>
+            <td>180 days</td>
+          </tr>
+          <tr>
+            <th scope="row">4-Pay</th>
+            <td class="FourPayTotalBalance bold"></td>
+            <td class="FourPayAmountDue"></td>
+            <td class="FourPayInstallmentAmount"></td>
+            <td>$6</td>
+            <td>3</td>
+            <td>90 days</td>
+          </tr>
+          <tr>
+            <th scope="row">10-Pay</th>
+            <td class="TenPayTotalBalance bold"></td>
+            <td class="TenPayAmountDue"></td>
+            <td class="TenPayInstallmentAmount"></td>
+            <td>$6</td>
+            <td>9</td>
+            <td>30 days</td>
+          </tr>
+          <tr>
+            <th scope="row">10-Pay EFT</th>
+            <td class="TenPayEFTTotalBalance bold"></td>
+            <td class="TenPayEFTAmountDue"></td>
+            <td class="TenPayEFTInstallmentAmount"></td>
+            <td>$3</td>
+            <td>9</td>
+            <td>30 days</td>
+          </tr>
+        </table>
+               
+       <div class="body italic" style="margin-top:5px; text-align:center;">Note: Payment plans incur $10 setup fee and $3-$6 fee per installment.</div>
+        
+    </div>
+</div>    
+
+<script>
+
+$(function(){
+		
+	$(".overlay-wrapper .table .TotalPremium").html(LastQuoteLoadedOBJ.TotalPremium).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	
+	$(".overlay-wrapper .table .TwoPayAmountDue").html(LastQuoteLoadedOBJ.TwoPayAmountDue).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	$(".overlay-wrapper .table .TwoPayRemainingBalance").html(LastQuoteLoadedOBJ.TwoPayRemainingBalance).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	$(".overlay-wrapper .table .TwoPayTotalBalance").html(LastQuoteLoadedOBJ.TwoPayTotalBalance).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	
+	$(".overlay-wrapper .table .FourPayAmountDue").html(LastQuoteLoadedOBJ.FourPayAmountDue).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	$(".overlay-wrapper .table .FourPayInstallmentAmount").html(LastQuoteLoadedOBJ.FourPayInstallmentAmount).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	$(".overlay-wrapper .table .FourPayTotalBalance").html(LastQuoteLoadedOBJ.FourPayTotalBalance).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	
+	$(".overlay-wrapper .table .TenPayAmountDue").html(LastQuoteLoadedOBJ.TenPayAmountDue).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	$(".overlay-wrapper .table .TenPayInstallmentAmount").html(LastQuoteLoadedOBJ.TenPayInstallmentAmount-3).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	$(".overlay-wrapper .table .TenPayTotalBalance").html(LastQuoteLoadedOBJ.TenPayTotalBalance).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	
+	$(".overlay-wrapper .table .TenPayEFTAmountDue").html(LastQuoteLoadedOBJ.TenPayAmountDue).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	$(".overlay-wrapper .table .TenPayEFTInstallmentAmount").html(LastQuoteLoadedOBJ.TenPayInstallmentAmount-3).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	$(".overlay-wrapper .table .TenPayEFTTotalBalance").html(LastQuoteLoadedOBJ.TenPayTotalBalance).formatCurrency({negativeFormat: false, roundToDecimalPlace: 0});
+	
+});
+
+</script>
